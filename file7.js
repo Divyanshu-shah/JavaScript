@@ -22,8 +22,16 @@
 
 // write a function to accept two numbers and print sum
 
-function sum(a,b) {
+// function sum(a,b) {
+//     return a+b;
+// }
+// let result = sum(5,10);
+// console.log(result);
+
+
+function add(a,b) {
     return a+b;
 }
-let result = sum(5,10);
+let result = add(5,10);
 console.log(result);
+
