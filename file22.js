@@ -10,12 +10,7 @@ const products = [
 const cart = [];
 
 function addToCart(id){
-        const product = products.find(p => p.id === id);
-        cart.push({
-            ...products,
-            quantity: 1,
-            total: products.price * products.quantity
-        });
+        cart.push(products.find(product => product.id === id));
 }
 addToCart(1);
 addToCart(2);
