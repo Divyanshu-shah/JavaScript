@@ -10,9 +10,50 @@ const products = [
 const cart = [];
 
 function addToCart(id){
-        cart.push(products.find(product => product.id === id));
+    const product = products.find(product => product.id === id);
+    cart.push({...product, quantity: 1});
+    // cart.push(products.find(product => product.id === id));
 }
+
+
+function increment(id){
+    const item = cart.find(item => item.id === id);
+    if (item) {
+        item.quantity += 1;
+    }
+}
+
+
 addToCart(1);
-addToCart(2);
 addToCart(3);
+addToCart(5);
 console.log(cart);
+increment(1);
+increment(5);
+console.log(cart);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const cart = [];
+// function addToCart(id, qty = 1) {
+//     const product = products.find(product => product.id === id);
+//     const Item = cart.find(item => item.id === id);
+//     if (Item) {
+//         Item.quantity += qty;
+//     } else {
+//         cart.push({ ...product, quantity: qty });
+//     }
+// }
+
