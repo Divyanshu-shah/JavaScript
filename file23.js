@@ -85,3 +85,33 @@ const result = numbers.some((number) => {
 });
 
 console.log(result); // Output: true
+
+
+let marks = [85, 40, 78, 92, 88];
+const result1 = marks.some((mark) => {
+  return mark > 50;
+});
+if(result1){
+  console.log("pass");
+}else{
+  console.log("fail");
+}
+
+
+// ==========================================
+// every()
+// Used to test whether ALL elements in the array
+// pass the test implemented by the provided function.
+// It returns a Boolean value.
+
+const result2 = marks.every((mark) => {
+  return mark > 50;
+});
+if(result2){
+  console.log("pass");
+}else{
+  console.log("fail");
+}
+
+
+
