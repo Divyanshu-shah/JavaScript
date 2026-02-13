@@ -26,6 +26,7 @@ const products = [
 ];
 let search = "laptop";
 let text = 1;
+
 // const resultArray = products.map((product) => product);
 // const resultArray = products.filter((product) => product.category === text);   
 // do not use this use find instead of filter when you want to find a single element in an array
