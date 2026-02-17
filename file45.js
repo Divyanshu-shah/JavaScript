@@ -1,7 +1,7 @@
 function getStudentInfo() {
     return {
         name: "John Doe",
-        email: "john.doe@example.com",
+        email: "john@example.com",
         age: 20
     };
 }

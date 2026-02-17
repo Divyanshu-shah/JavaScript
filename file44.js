@@ -1,27 +1,31 @@
-function f1(x) {
-  return new Promise((resolve,reject)=>{     // reject - used to handle errors.
-    setTimeout(()=>{
-        if(x%2==0){
-            // console.log("This is f1 function");
-            resolve(`${x} is an even number`);
-        }else{
-            reject("odd number is not allowed");
-        }
-        resolve();
-    },3000);
-  });
-}
-
-async function main(){
-    let num = Math.round(Math.random()*10);
+async function getStudentInfo() {
     try {
-        const result = await f1(num);
-        console.log(result);
-        console.log("Program completed");
-    } catch (err) {
-        console.log(err);
+        const student = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    name: "Divyanshu Shah",
+                    email: "divyanshu@gmail.com",
+                    age: 21
+                });
+            }, 1000);
+        });
+
+        return student;
+
+    } catch (error) {
+        throw new Error("Failed to fetch student info");
     }
 }
 
-main();
+async function main() {
+    try {
+        const result = await getStudentInfo();
+        console.log(result);
+    } catch (error) {
+        console.log("Error:", error.message);
+    }
 
+    console.log("Program completed");
+}
+
+main();
