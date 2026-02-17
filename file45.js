@@ -1,16 +1,25 @@
 function getStudentInfo() {
-    return {
-        name: "John Doe",
-        email: "john@example.com",
-        age: 20
-    };
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const userObj = {
+        name: "John",
+        email: "john@gmail.com",
+        age: 21,
+      };
+      resolve(userObj);
+    }, 2000);
+  });
+}
+
+function displayInfo({name}){
+console.log(name)
 }
 
 async function main() {
-    const result = await getStudentInfo();
-    console.log(result);
-    console.log("Program completed");
+  const result = await getStudentInfo();
+  displayInfo(result)
+  console.log("Program Completed Successfully");
 }
+main()
 
-main();
-// getStudentInfo() should return name, email and age.
+//getStudentInfo should return object name,email and age
